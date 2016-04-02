@@ -45,9 +45,9 @@ button.newButton = function(x, y, buttonImgUp, buttonImgDown, buttonCallbackLeft
     btn.img = btn.imgUp
 
     if Collision.pointInBox(x, y, {btn.x, btn.y, btn.img:getWidth() * btn.scaleX, btn.img:getHeight() * btn.scaleY}) then
-      if btn.callbackLeft and button == "l" then
+      if btn.callbackLeft and button == 1 then
         btn.callbackLeft()
-      elseif btn.callbackRight and button == "r" then
+      elseif btn.callbackRight and button == 2 then
         btn.callbackRight()
       end
       return true

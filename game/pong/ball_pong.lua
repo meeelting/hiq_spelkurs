@@ -57,7 +57,7 @@ end
 
 Ball.collision.paddle = function(ball, paddle)
   
-  --We intersect the two boxes to find out what way to bounce the ball,
+  --We intersect the two boxes to find out which way to bounce the ball,
   --and how much to adjust the balls position so that the rectangle doesn't keep intersecting the ball.
   local overlap = Collision.boxOverlap(ball.box, paddle.box)
   
