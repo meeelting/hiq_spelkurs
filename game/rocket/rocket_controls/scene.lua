@@ -66,9 +66,12 @@ rocketGame.new = function()
     actors[#actors + 1] = addBlock({x = 300, y = 200}, 75)
     actors[#actors + 1] = addBlock({x = 300, y = 300}, 45)
     
+--    actors[#actors + 1] = addRocketShape({x = 500, y = 200}, 0)
+
+
     actors[#actors + 1] = RocketActor.new({ 
         position = { x = 200, y = 100 }, 
-        gfx = Rocket.gfx,
+        gfx = Rocket.gfx.normal ,
         shape = Rocket.getShape(rocketGame.world),
       })
   end

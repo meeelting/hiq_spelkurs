@@ -24,6 +24,11 @@ Quad.new = function(params)
       quadPart = quadPart,
       draw = function(x, y)
         love.graphics.draw(quad.image, quadPart, x, y, 0, quad.scale[1], quad.scale[2])
+      end,
+      
+      drawRotated = function(x, y, rotation) 
+--        love.graphics.circle("fill", x, y, 30, 30)
+        love.graphics.draw(quad.image, quadPart, x, y, rotation, quad.scale[1], quad.scale[2], (quad.image:getWidth() / params.rows) / 2, (quad.image:getHeight() / params.columns) / 2)
       end
     }
     
