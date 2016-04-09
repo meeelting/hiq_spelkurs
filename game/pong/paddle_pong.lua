@@ -6,8 +6,10 @@ Paddle.gfx = {
 }
 
 Paddle.speed = {}
-Paddle.speed.ai = 1000
-Paddle.speed.player = 150
+Paddle.speed.ai_smoothA = 750
+Paddle.speed.ai_smoothB = 1000
+Paddle.speed.playerA = 250
+Paddle.speed.playerB = 250
 
 Paddle.collision = {}
 Paddle.collision.ball = function(paddle, ball)

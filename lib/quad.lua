@@ -20,6 +20,8 @@ Quad.new = function(params)
     local quadPart = love.graphics.newQuad(column * quad.width, row * quad.height, quad.width, quad.height, quad.image:getDimensions())    
     return { 
       id = column .. "_" .. row,
+      quad = quad,
+      quadPart = quadPart,
       draw = function(x, y)
         love.graphics.draw(quad.image, quadPart, x, y, 0, quad.scale[1], quad.scale[2])
       end

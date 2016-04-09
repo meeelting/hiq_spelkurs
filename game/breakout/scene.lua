@@ -5,7 +5,7 @@ local Actor = require("game/actor")
 local Paddle = require("game/breakout/paddle_breakout")
 local Ball = require("game/breakout/ball_breakout")
 local Brick = require("game/breakout/brick_breakout")
-
+ 
 local breakOutScene = {}
 breakOutScene.new = function()
   local scene = {}

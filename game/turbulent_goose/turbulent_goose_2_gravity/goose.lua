@@ -23,15 +23,10 @@ Goose.controller = function(params)
   
 end
 
-Goose.screenBoundaryCollision = function(goose) 
-   
-  
-  
+Goose.screenBoundaryCollision = function(goose)   
   --Collision vs bottom
-  if goose.position.y + goose.size.h2 > goose.graphics.getHeight() then
-    
-    --This kills a goose
-    
+  if goose.position.y + goose.size.h2 > goose.graphics.getHeight() then    
+    --This kills a goose    
   end
   
   return 

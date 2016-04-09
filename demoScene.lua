@@ -17,6 +17,8 @@ local Goose7Scene = require("game/turbulent_goose/turbulent_goose_7_DEATH/scene"
 local Goose8Scene = require("game/turbulent_goose/turbulent_goose_8_parallax/scene")
 local Goose9Scene = require("game/turbulent_goose/turbulent_goose_9_ai/scene")
 
+local RocketScene = require("game/rocket/rocket_start/scene")
+
 local Particles = require("lib/particles")
 
 local debugScene = {}
@@ -123,7 +125,7 @@ debugScene.new = function()
     scene.buttons = {}
     particles_bubbles = nil
   end
-  scene.registerButton(Button.newButton(love.graphics.getWidth() - 160, 32, "gfx/breakout.png", "gfx/breakout.png", openBreakoutScene, nil, {4, 4}))
+  scene.registerButton(Button.newButton(love.graphics.getWidth() - 280, 32, "gfx/breakout.png", "gfx/breakout.png", openBreakoutScene, nil, {4, 4}))
   
   local openBreakoutFunScene = function()    
     local bscene = BreakoutFunScene.new()  
@@ -131,7 +133,7 @@ debugScene.new = function()
     scene.buttons = {}
     particles_bubbles = nil
   end
-  scene.registerButton(Button.newButton(love.graphics.getWidth() - 160, 176, "gfx/breakoutlol.png", "gfx/breakoutlol.png", openBreakoutFunScene, nil, {4, 4}))
+  scene.registerButton(Button.newButton(love.graphics.getWidth() - 280, 176, "gfx/breakoutlol.png", "gfx/breakoutlol.png", openBreakoutFunScene, nil, {4, 4}))
 
   local openParallaxScene = function()    
     local bscene = ParallaxScene.new()
@@ -212,6 +214,15 @@ debugScene.new = function()
     particles_bubbles = nil
   end
   scene.registerButton(Button.newButton(196 + 160, 312, "gfx/goose/button9.png", "gfx/goose/button9.png", openGoose9Scene, nil, {2, 2})) 
+  
+  local rocketScene = function()    
+    local bscene = RocketScene.new()
+    scene.addChildScene(bscene)
+    scene.buttons = {}
+    particles_bubbles = nil
+  end
+  scene.registerButton(Button.newButton(love.graphics.getWidth() - 140, 32, "gfx/rocket.png", "gfx/rocket.png", rocketScene, nil, {4, 4})) 
+  rocketScene()
   
   return scene
 end

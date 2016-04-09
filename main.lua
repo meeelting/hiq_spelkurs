@@ -43,4 +43,3 @@ function love.update( dt )
   gamescene.update(dt)
 
 end
-

@@ -88,13 +88,11 @@ pongScene.new = function(playerA_settings, playerB_settings)
       imagePath = Paddle.gfx.right
       position = { love.graphics.getWidth() - 32, love.graphics.getHeight() / 2 }
     end
-    
+        
     local paddleParams = {
       position = position,
       direction = { 0, 0 },
-      speed = Paddle.speed.ai, -- Here's a bug! It should use the players speed if it can. Unfortunately we havent really 
-                               -- determined what the paddle will be used for yet. We should just set it later when we set
-                               -- the controller.                
+      speed = Paddle.speed[settings], 
       rotation = 0,
       scale = { 2, 2 },
       imagePath = imagePath,
