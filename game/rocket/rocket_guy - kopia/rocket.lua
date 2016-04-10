@@ -25,31 +25,7 @@ Rocket.gfx = {
 Rocket.controller = function(params)
  
   return function(actor, deltaTime)  
-    if love.keyboard.isDown("up") then      
-      actor.shape.body:applyForce(0, -actor.verticalSpeed * deltaTime)
-    end
     
-    if love.keyboard.isDown("left") then
-      actor.shape.body:applyForce(-actor.horizontalSpeed * deltaTime, 0)
-    end
-    
-    if love.keyboard.isDown("right") then
-      actor.shape.body:applyForce(actor.horizontalSpeed * deltaTime, 0)
-    end
-    
-    local vx, vy = actor.shape.body:getLinearVelocity()
-    if (vy < -200) then
-      actor.gfx = actor.gfx_settings.happy
-    elseif (vy < -150) then
-      actor.gfx = actor.gfx_settings.yay    
-      
-    elseif (vy < -10) then
-      actor.gfx = actor.gfx_settings.normal
-    
-    elseif (vy > 400) then
-      --bug here wont release sad face
-      actor.gfx = actor.gfx_settings.scared
-    end
   end
   
 end

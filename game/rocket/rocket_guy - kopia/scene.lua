@@ -71,7 +71,6 @@ rocketGame.new = function()
         position = { x = 200, y = 100 }, 
         gfx = Rocket.gfx,
         shape = Rocket.getShape(rocketGame.world),
-        controller = Rocket.controller()
       })
   end
 
