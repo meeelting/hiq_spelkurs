@@ -19,6 +19,7 @@ local Goose9Scene = require("game/turbulent_goose/turbulent_goose_9_ai/scene")
 
 local RocketScene_start = require("game/rocket/rocket_start/scene")
 local RocketScene_controls = require("game/rocket/rocket_start/scene")
+local RocketScene_guy = require("game/rocket/rocket_guy/scene")
 
 local Particles = require("lib/particles")
 
@@ -222,7 +223,7 @@ debugScene.new = function()
     scene.buttons = {}
     particles_bubbles = nil
   end
-  scene.registerButton(Button.newButton(love.graphics.getWidth() - 140, 32, "gfx/rocket.png", "gfx/rocket.png", rocketScene_start, nil, {4, 4})) 
+  scene.registerButton(Button.newButton(love.graphics.getWidth() - 140, 32, "gfx/rocket.png", "gfx/rocket.png", rocketScene_start, nil, {2, 2})) 
   
   local rocketScene_controls = function()    
     local bscene = RocketScene_start.new()
@@ -230,8 +231,15 @@ debugScene.new = function()
     scene.buttons = {}
     particles_bubbles = nil
   end
-  scene.registerButton(Button.newButton(love.graphics.getWidth() - 140, 32, "gfx/rocket.png", "gfx/rocket.png", rocketScene_controls, nil, {4, 4})) 
-  rocketScene_controls()
+  scene.registerButton(Button.newButton(love.graphics.getWidth() - 140 + 64, 32, "gfx/rocket.png", "gfx/rocket.png", rocketScene_controls, nil, {2, 2})) 
+  
+  local rocketScene_guy = function()    
+    local bscene = RocketScene_guy.new()
+    scene.addChildScene(bscene)
+    scene.buttons = {}
+    particles_bubbles = nil
+  end
+  scene.registerButton(Button.newButton(love.graphics.getWidth() - 140, 96, "gfx/rocket.png", "gfx/rocket.png", rocketScene_guy, nil, {2, 2})) 
   
   return scene
 end

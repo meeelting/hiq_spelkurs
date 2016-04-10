@@ -1,5 +1,6 @@
 local DemoScene = require("demoScene")
 local ParallaxScene = require("tests/parallaxScene")
+local Globals = require("lib/globals")
 
 local gamescene
 

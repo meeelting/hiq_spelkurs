@@ -20,7 +20,17 @@ Actor.new = function(params)
   actor.shape.body:setPosition(actor.position.x, actor.position.y)
   
   actor.update = function(deltatime)    
+    if love.keyboard.isDown("up") then      
+      actor.shape.body:applyForce(0, -actor.verticalSpeed * deltatime)
+    end
     
+    if love.keyboard.isDown("left") then
+      actor.shape.body:applyForce(-actor.horizontalSpeed * deltatime, 0)
+    end
+    
+    if love.keyboard.isDown("right") then
+      actor.shape.body:applyForce(actor.horizontalSpeed * deltatime, 0)
+    end
   end
   
   actor.draw = function() 
