@@ -78,7 +78,7 @@ turbulentGoose.new = function(playerA_settings, playerB_settings)
   local createPlayerGoose = function(y, color) 
     
     local gooseControllerParams = {
-      jumpKey = " ",
+      jumpKey = "w",
       scene = scene,
       reset = nil,      
     }

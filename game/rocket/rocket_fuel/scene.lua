@@ -1,7 +1,7 @@
 local Scene = require("lib/scene")
 local Quad = require("lib/quad")
-local Rocket = require("game/rocket/rocket_guy/rocket")
-local RocketActor = require("game/rocket/rocket_guy/rocketActor")
+local Rocket = require("game/rocket/rocket_fuel/rocket")
+local RocketActor = require("game/rocket/rocket_fuel/rocketActor")
 
 local rocketGame = {}
 rocketGame.new = function()
@@ -71,6 +71,8 @@ rocketGame.new = function()
         position = { x = 200, y = 100 }, 
         gfx = Rocket.gfx,
         shape = Rocket.getShape(rocketGame.world),
+        controller = Rocket.controller(),
+        renderer = Rocket.renderer(),
       })
   end
 
